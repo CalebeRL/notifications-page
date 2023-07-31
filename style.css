@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap');
+
+* {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --red: hsl(1, 90%, 64%);
+    --blue: hsl(219, 85%, 26%);
+
+    --very-light-grayish-blue: hsla(210, 60%, 98%);
+    --very-light-grayish-blue-bg: hsla(210, 60%, 98%, 0.8);
+
+    --light-grayish-blue-1: hsl(211, 68%, 94%);
+    --light-grayish-blue-1-bg: hsla(211, 68%, 94%, 0.4);
+
+    --light-grayish-blue-2: hsl(205, 33%, 90%);
+    --grayish-blue: hsl(219, 14%, 63%);
+    --dark-grayish-blue: hsl(219, 12%, 42%);
+    --very-dark-blue: hsl(224, 21%, 14%);
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: var(--very-light-grayish-blue-bg);
+}
+
+.wrapper {
+    background-color: white;
+    max-width: 600px;
+    padding: 2rem 1.5rem 1rem;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 6px var(--light-grayish-blue-2);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.notifications-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.7rem;
+}
+
+.notifications-title span {
+    background-color: var(--blue);
+    padding: 0.2rem 0.6rem;
+    border-radius: 0.4rem;
+    color: white;
+    font-weight: 800;
+    font-size: 0.8rem;
+}
+
+.mark-read {
+    display: flex;
+    font-size: 0.9rem;
+    color: var(--dark-grayish-blue);
+    font-weight: 500;
+}
+
+.notification {
+    display: flex;
+    align-items:flex-start;
+    position: relative;
+    gap: 1rem;
+    color: var(--dark-grayish-blue);
+    font-size: 0.6rem;
+    border-radius: 0.6rem;
+    padding: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.notification:last-child {
+    padding-bottom: 0;
+}
+
+.notification h2 {
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+
+}
+
+.notification[state="unread"] {
+    background-color: var(--light-grayish-blue-1-bg);
+}
+
+.notification[state="unread"] > div > h2::after {
+    display: inline-block;
+    content: "";
+    width: 0.4rem;
+    height: 0.4rem;
+    background-color: red;
+    border-radius: 100%;
+    margin: 0.1rem 0.2rem;
+}
+
+.notification p {
+    font-size: 0.9rem;
+    border: 1px solid var(--light-grayish-blue-1);
+    padding: 1rem;
+    border-radius: 0.2rem;
+    margin-top: 0.4rem;
+}
+
+.notification p:hover {
+    cursor: pointer;
+    background-color: var(--light-grayish-blue-1);
+}
+
+
+.notification-time {
+    font-size: 0.9rem;
+    color: var(--grayish-blue);
+}
+
+.avatar, .picture  {
+    width: 2.5rem;
+}
+
+.picture {
+    width: 2.8rem;
+    position: absolute;
+    right: 0;
+    margin-right: 1.2rem;
+    border: 1px solid transparent ;
+    border-radius: 0.5rem;
+    padding: 1px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.picture:hover {
+    border-color: var(--light-grayish-blue-1);
+}
+
+.name {
+    color: var(--very-dark-blue);
+    font-weight: 800;
+    margin-right: 0.2rem;
+}
+
+.click:hover {
+    cursor: pointer;
+    color: var(--blue);
+}
+
+.bold {
+    color: var(--dark-grayish-blue);
+    font-weight: 800;
+}
+
+.bold:hover {
+    cursor: pointer;
+    color: var(--blue);
+}
+
+@media (max-width: 700px) {
+    body {
+        margin: 0;
+        background-color: white;
+
+    }
+
+    .wrapper {
+        margin: 0;
+        padding: 1rem;
+        box-shadow: none;
+    }
+
+    header {
+        margin-top: 0.8rem;
+    }
+
+    .notifications-title span {
+        padding: 0.2rem 0.7rem;
+        font-size: 0.9rem;
+    }
+    
+    .notification {
+        margin-bottom: 0.6rem;
+    }
+
+    .picture {
+        position: relative;
+        margin: 0;
+    }
+
+    .bold {
+        font-weight: 800;
+        color: var(--dark-grayish-blue);
+    }
+
+    .notification:last-child {
+        padding-bottom: 1rem;
+    }
+}
