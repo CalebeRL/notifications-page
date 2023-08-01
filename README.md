@@ -19,7 +19,7 @@ This is a solution to the [Notifications page challenge on Frontend Mentor](http
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Notifications Page](https://caleberl.github.io/notifications-page/) 
 
 ## My process
 
